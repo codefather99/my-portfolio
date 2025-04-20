@@ -15,6 +15,12 @@ const config: Config = {
         md: '1.5rem',
         lg: '2rem'
       }
+    },
+    extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)', 'sans-serif'],
+        spaceGrotesk: ['var(--font-space-grotesk)', 'sans-serif']
+      }
     }
   },
   plugins: []
