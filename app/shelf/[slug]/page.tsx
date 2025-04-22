@@ -7,9 +7,9 @@ type Props = {
   };
 };
 
-// Mark the component as async to await params
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;  // Await params
+// No need to make the component async or await params
+export default function BlogPostPage({ params }: Props) {
+  const { slug } = params;  // Access params directly without awaiting
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
