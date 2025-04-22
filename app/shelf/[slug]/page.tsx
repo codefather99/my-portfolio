@@ -3,17 +3,18 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-interface pageProps {
+// Correct type for the params in Next.js 13+ dynamic route
+interface PageProps {
   params: {
     slug: string;
   };
 }
 
-export default async function BlogPostPage({ params }: pageProps) {
-  // Ensure params is awaited if it's a promise
-  const { slug } = await params; // Awaiting params here if needed
+// Using the async function for fetching dynamic data, if necessary
+export default function BlogPostPage({ params }: PageProps) {
+  const { slug } = params;  // params is directly available here
 
-  const post = blogPosts.find((p) => p.slug === slug);  // No await here on .find() as it's synchronous
+  const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) return notFound();
 
@@ -35,6 +36,7 @@ export default async function BlogPostPage({ params }: pageProps) {
   );
 }
 
+// Static generation for dynamic params
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
