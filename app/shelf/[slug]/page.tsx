@@ -1,15 +1,9 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-// No need to make the component async or await params
-export default function BlogPostPage({ params }: Props) {
-  const { slug } = params;  // Access params directly without awaiting
+// No need to define Props manually
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
