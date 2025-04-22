@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import SvgPattern from "@/components/svgPattern";
 import ScrollBar from "@/components/scrollBar";
-import { usePathname, useRouter } from "next/navigation";
+// import { usePathname} from "next/navigation";
 
 
 const sections = ["/", "about", "work", "portfolio", "contact", "footer"];
@@ -19,7 +19,7 @@ export default function Home() {
   const menuRef = useRef<HTMLDivElement | null>(null);
   // const [replacedIndex, setReplacedIndex] = useState<number | null>(null);
 
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   // const router = useRouter();
 
@@ -431,13 +431,13 @@ export default function Home() {
 
    <div className="flex flex-row lg:gap-6 gap-3 text-sm lg:text-md">
           
-          <a href="#" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
-            TW
+          <a href="https://x.com/emirofanambra" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+            X
           </a>
           <a href="https://github.com/codefather99" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
             GH
           </a>
-          <a href="#" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+          <a href="https://www.linkedin.com/in/emefo-henry-4202a0349/" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
             LN
           </a>
           <a href="https:www.youtube.com/@EmefoHenry" className="text-[#64FFDA] hover:text-white transition-colors duration-300">

@@ -1,11 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
-// Create a type for the verify callback parameters
-interface VerifyCallback {
-  (error: Error | null): void;  // We only need the error parameter
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).end("Method not allowed");
 

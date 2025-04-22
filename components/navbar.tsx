@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -19,11 +19,11 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
   const router = useRouter();
   const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const menuItems = [
-    { label: "My Work", path: "/work" },
-    { label: "My Shelf", path: "/shelf" },
-    { label: "My Resume", path: "/resume" },
-  ];
+const menuItems = useMemo(() => [
+  { label: "My Work", path: "/work" },
+  { label: "My Shelf", path: "/shelf" },
+  { label: "My Resume", path: "/resume" },
+], []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -174,13 +174,13 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
                 </a>
               </div>
               <div className="flex flex-row justify-between gap-2 mt-10">
-                <a href="https://twitter.com/yourhandle" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
-                  TW
+                <a href="https://x.com/emirofanambra" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
+                  X
                 </a>
                 <a href="https://github.com/codefather99" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
                   GH
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
+                <a href="https://www.linkedin.com/in/emefo-henry-4202a0349/" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
                   LN
                 </a>
               </div>
