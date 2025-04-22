@@ -3,15 +3,9 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-// Correct type for the params in Next.js 13+ dynamic route
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
 
 // Using the async function for fetching dynamic data, if necessary
-export default function BlogPostPage({ params }: PageProps) {
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;  // params is directly available here
 
   const post = blogPosts.find((p) => p.slug === slug);
