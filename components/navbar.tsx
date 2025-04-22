@@ -58,7 +58,7 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
     <nav
       className={`${
         isHome ? "fixed" : "relative"
-      } top-0 left-0 w-full p-10 flex justify-between items-center transition-all duration-300 z-50 bg-transparent ${
+      } top-0 left-0 w-full p-10 flex justify-between items-center transition-all duration-300 z-500 bg-transparent ${
         scrolled ? "bg-transparent" : "bg-transparent"
       }`}
     >
@@ -122,7 +122,7 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
                 >
                   <Link
                     href={href}
-                    className="text-sm text-[#0A192F] hover:text-[#64FFDA] transition"
+                    className="text-sm text-[#0A192F] hover:text-[#00BFA5] transition"
                     onClick={(e) => {
                       e.preventDefault();
                       setReplacedIndex(index);
@@ -157,7 +157,7 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
               <div className="flex flex-col gap-2">
                 <a
                   href="mailto:emefohenry02@gmail.com"
-                  className="text-sm text-[#0A192F] hover:text-[#64FFDA] hover:underline transition"
+                  className="text-sm text-[#0A192F] hover:text-[#00BFA5] hover:underline transition"
                 >
                   hello@emefo.dev
                 </a>
@@ -165,19 +165,19 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
                   href="https://wa.me/2348077532601"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-[#0A192F] hover:text-[#64FFDA] transition"
+                  className="text-sm text-[#0A192F] hover:text-[#00BFA5] hover:underline transition"
                 >
                   w.me/mremefo
                 </a>
               </div>
               <div className="flex flex-row justify-between gap-2 mt-10">
-                <a href="https://twitter.com/yourhandle" target="_blank" className="text-xs hover:text-[#64FFDA]">
+                <a href="https://twitter.com/yourhandle" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
                   TW
                 </a>
-                <a href="https://github.com/codefather99" target="_blank" className="text-xs hover:text-[#64FFDA]">
+                <a href="https://github.com/codefather99" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
                   GH
                 </a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-xs hover:text-[#64FFDA]">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" className="text-xs hover:text-[#00BFA5] hover:underline">
                   LN
                 </a>
               </div>

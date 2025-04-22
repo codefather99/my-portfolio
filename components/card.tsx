@@ -13,7 +13,7 @@ export default function Card({ title, image, link, linktext }: CardProps) {
   return (
     <Link href={link} passHref>
     <motion.div
-      className="w-full max-w-s mx-auto  rounded-2xl overflow-hidden shadow-lg bg-white  cursor-pointer"
+      className="lg:w-full md:w-full w-[80%] max-w-s mx-auto  rounded-2xl overflow-hidden shadow-lg bg-white  cursor-pointer"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -37,7 +37,7 @@ export default function Card({ title, image, link, linktext }: CardProps) {
           {title}
           <br />
         </h2>
-        <h3 className="font-inter text-sm text-[#00BFA5]">
+        <h3 className="font-inter  text-sm text-[#00BFA5]">
         {linktext}
         </h3>
       </div>

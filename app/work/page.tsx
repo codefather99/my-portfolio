@@ -1,15 +1,13 @@
 "use client";
-import Footer from "@/components/footer";
 import Card from "@/components/card";
-import Image from "next/image";
 
 // 🆕 Update your data to include image URLs instead of descriptions
 const data = [
   { id: 1, title: "Simply Asoebi", image: "/images/sa-logo.png", link: "https://www.simplyasoebi.com/", linktext:"simplyasoebi.com"  },
-  { id: 2, title: "Pincher", image: "/images/pincher-logo.png", link: "https://pincher.onrender.com/", linktext:"pincher.com"   },
-  { id: 3, title: "Medix Frontiers", image: "/images/medix-logo.png", link: "https://www.simplyasoebi.com/", linktext:""   },
+  { id: 2, title: "Pincher", image: "/images/pincherlogo.png", link: "https://pincher.onrender.com/", linktext:"pincher.onrender.com"   },
+  { id: 3, title: "Medix Frontiers", image: "/images/medix-logo.png", link: "https://github.com/codefather99/Medix-Frontiers-2.0", linktext:"Github"   },
   { id: 4, title: "Personal Website", image: "/images/emefo-logo4.png", link: "/", linktext:"emefo.dev"   },
-  { id: 5, title: "Fifth Project", image: "/images/project5.jpg", link: "https://www.simplyasoebi.com/", linktext:""   },
+  { id: 5, title: "NFT Hub", image: "/images/nfthub-logo.png", link: "/work", linktext:"Coming Soon"   },
 ];
 
 // ✅ Updated CardList component to pass `image` instead of `description`
@@ -34,7 +32,9 @@ export default function Work() {
     <div className="min-h-screen flex flex-col">
       <div className="py-16 flex-grow">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold">My Work</h1>
+          <h1 className="text-3xl font-bold text-[#0A192F]">My Work</h1>
+        <br />
+          <p className="text-[#00BFA5] px-4 font-inter mb-10">Signature Projects from My Professional Journey</p>
         </div>
         <CardList />
       </div>

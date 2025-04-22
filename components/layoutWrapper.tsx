@@ -29,7 +29,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     <>
       <Navbar scrolled={scrolled} isHome={isHome} />
       {children}
-      <Footer />
+      {pathname !== "/resume" && pathname !== "/" && <Footer />}
     </>
   );
 }

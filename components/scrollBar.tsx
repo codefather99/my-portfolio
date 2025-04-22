@@ -30,7 +30,8 @@ export default function ScrollBar({ activeSection }: ScrollBarProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="fixed top-5 left-10 w-20 h-20 object-contain z-[100]"
+          className="lg:fixed relative top-5 left-10  w-20 h-20 object-contain z-[100]
+          "
         />
       </AnimatePresence>
 
@@ -53,7 +54,7 @@ export default function ScrollBar({ activeSection }: ScrollBarProps) {
                 borderColor: borderColor,
               }}
               transition={{ duration: 0.5 }}
-              className="w-2 h-2 border border-[1px] cursor-pointer"
+              className="w-2 h-2  border border-[1px] cursor-pointer"
               style={{
                 transform: `rotate(${isHighlighted ? 180 : 45}deg)`,
               }}
