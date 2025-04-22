@@ -134,7 +134,7 @@ export default function Resume() {
                     <h3 className="text-lg font-semibold text-[#00BFA5] mt-5 ">Pincher</h3>
                     <p className="text-sm text-black font-inter">Principal Fullstack Engineer – 2022 to 2024</p>
                     <p className="text-neutral-500 font-inter pb-2">
-                    I designed and developed the frontend infrastructure, design and functionality for Pincher's new JavaScript-centric app powered by React. </p>
+                    I designed and developed the frontend infrastructure, design and functionality for Pincher&apos;s new JavaScript-centric app powered by React. </p>
                     <ul className="list-disc text-m text-gray-600 ml-4 font-inter" >
                       <li className="py-2">
                       Improved shopper satisfaction with real-time cart updates, personalized product suggestions, and one-click checkout — reducing drop-offs and boosting conversion rates. </li>

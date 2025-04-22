@@ -1,12 +1,15 @@
-// /pages/api/contact.ts
 import type { NextApiRequest, NextApiResponse } from "next";
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
+
+// Create a type for the verify callback parameters
+interface VerifyCallback {
+  (error: Error | null): void;  // We only need the error parameter
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).end("Method not allowed");
 
   const { name, email, message } = req.body;
-  
 
   const transporter = nodemailer.createTransport({
     service: "Gmail", // or use SMTP config
@@ -17,13 +20,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   console.log("Transporter verifying...");
-transporter.verify((error: any, success: any) => {
-  if (error) {
-    console.log("Transport error:", error);
-  } else {
-    console.log("Server is ready to take messages");
-  }
-});
+  transporter.verify((error: Error | null) => {
+    if (error) {
+      console.log("Transport error:", error);
+    } else {
+      console.log("Server is ready to take messages");
+    }
+  });
 
   try {
     await transporter.sendMail({
@@ -38,8 +41,14 @@ transporter.verify((error: any, success: any) => {
     });
 
     res.status(200).json({ success: true });
-  } catch (error: any) {
-    console.error("email error:", error);
-    res.status(500).json({ error: error.message || "Email sending failed." });
+  } catch (error: unknown) {
+    // Narrow the type of error
+    if (error instanceof Error) {
+      console.error("email error:", error);
+      res.status(500).json({ error: error.message || "Email sending failed." });
+    } else {
+      console.error("Unknown error:", error);
+      res.status(500).json({ error: "Unknown error occurred" });
+    }
   }
 }

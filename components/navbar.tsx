@@ -44,6 +44,8 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
+ 
+
   // Sync the replacedIndex with pathname changes
   useEffect(() => {
     if (pathname === "/") {
@@ -52,7 +54,7 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
       const currentPageIndex = menuItems.findIndex(item => item.path === pathname);
       setReplacedIndex(currentPageIndex); // Update index for other pages
     }
-  }, [pathname]);
+  }, [pathname, menuItems]);
 
   return (
     <nav
@@ -79,6 +81,7 @@ export default function Navbar({ scrolled, isHome }: NavbarProps) {
           setMenuOpen(!menuOpen);
         }}
         className="relative w-10 h-10 z-[200]"
+        aria-expanded={menuOpen ? "true" : "false"}
       >
         <span
           className={`block w-full h-0.5 bg-black transition-all duration-300 ${

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -9,25 +10,25 @@ export default function Footer() {
       {/* Social Icons (Replace with actual icons) */}
       <div className="flex flex-col lg:gap-6 gap-3 mt-4 text-left">
         <h2 className="text-md text-gray-400">SAY HELLO</h2>
-        <a href="#contact" className="text-[#64FFDA] hover:text-white font-inter transition-colors duration-300">
+        <Link href="#contact" className="text-[#64FFDA] hover:text-white font-inter transition-colors duration-300">
           Mail
-        </a>
-        <a href="https://wa.me/2348077532601" className="text-[#64FFDA] hover:text-white font-inter transition-colors duration-300">
+        </Link>
+        <Link href="https://wa.me/2348077532601" className="text-[#64FFDA] hover:text-white font-inter transition-colors duration-300">
           Whatsapp
-        </a>
+        </Link>
       
       </div>
 
       <div className="flex flex-col lg:gap-6 gap-3 mt-8 font-inter text-sm text-left">
-      <a href="/work" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+      <Link href="/work" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
           My Work
-        </a>
-        <a href="/shelf" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+        </Link>
+        <Link href="/shelf" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
           My Shelf
-        </a>
-        <a href="/resume" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+        </Link>
+        <Link href="/resume" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
           My Resume
-        </a>
+        </Link>
       </div>
 </div>
 

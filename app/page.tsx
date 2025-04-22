@@ -13,21 +13,21 @@ const sections = ["/", "about", "work", "portfolio", "contact", "footer"];
 
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
+  // const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
   const menuRef = useRef<HTMLDivElement | null>(null);
-  const [replacedIndex, setReplacedIndex] = useState<number | null>(null);
+  // const [replacedIndex, setReplacedIndex] = useState<number | null>(null);
 
   const pathname = usePathname();
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (pathname === "/") {
-      setReplacedIndex(null); // Always reset when back on home
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (pathname === "/") {
+  //     setReplacedIndex(null); // Always reset when back on home
+  //   }
+  // }, [pathname]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -72,20 +72,20 @@ export default function Home() {
       document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
 
-  const menuItems = [
-    { label: "My Work", path: "/work" },
-    { label: "My Shelf", path: "/portfolio" },
-    { label: "My Resume", path: "/resume" },
-  ];
+  // const menuItems = [
+  //   { label: "My Work", path: "/work" },
+  //   { label: "My Shelf", path: "/portfolio" },
+  //   { label: "My Resume", path: "/resume" },
+  // ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // or whatever threshold you prefer
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setScrolled(window.scrollY > 50); // or whatever threshold you prefer
+  //   };
   
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -298,13 +298,13 @@ export default function Home() {
       <p className="mt-2 text-[#0A192F] font-inter lg:text-xl text-sm">
         Open source projects,<br /> web apps,<br /> and experimentals.
       </p>
-      <a
+      <Link
         href="/work"
         className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3 py-2 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
       >
         <span className="absolute inset-0 w-0 bg-[#0A192F] transition-all duration-300 ease-in-out group-hover:w-full group-active:w-full"></span>
         <span className="relative z-10 group-hover:text-white group-active:text-white">See My Work →</span>
-      </a>
+      </Link>
 
     </div>
 
@@ -317,13 +317,13 @@ export default function Home() {
       <p className="mt-2 text-[#0A192F] font-inter lg:text-xl text-sm">
         About design,<br /> design & dev,<br /> learning and life.
       </p>
-      <a
+      <Link
         href="/shelf"
         className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3 py-2 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
       >
         <span className="absolute inset-0 w-0 bg-[#0A192F] transition-all duration-300 ease-in-out group-hover:w-full group-active:w-full"></span>
         <span className="relative z-10 group-hover:text-white group-active:text-white">Read my blog →</span>
-      </a>
+      </Link>
 
     </div>
   </div>
@@ -331,9 +331,9 @@ export default function Home() {
 
 
 <section id="contact" className="w-full lg:h-screen my-20 lg:my-0 pt-10 lg:pt-0 flex flex-col items-center justify-center bg-[#F4FDFC] px-6 text-center lg:snap-start">
-  <h2 className="lg:text-5xl text-3xl font-bold text-[#0A192F]">Let's Work Together</h2>
+  <h2 className="lg:text-5xl text-3xl font-bold text-[#0A192F]">Let&apos;s Work Together</h2>
   <p className="lg:mt-4 mt-2 lg:text-lg text-sm text-gray-700 lg:max-w-lg px-5">
-  You Have a question, idea, or just want to say hi? I’d love to hear from you.
+  You Have a question, idea, or just want to say hi? I&apos;d love to hear from you.
   </p>
 
   <form onSubmit={handleSubmit} className="mt-8 lg:w-3/5 lg:max-w-2xl flex flex-col gap-6">
@@ -407,15 +407,15 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col lg:gap-6 gap-3 mt-8 font-inter text-sm text-left">
-        <a href="/work" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+        <Link href="/work" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
             My Work
-          </a>
-          <a href="/shelf" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+          </Link>
+          <Link href="/shelf" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
             My Shelf
-          </a>
-          <a href="/resume" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
+          </Link>
+          <Link href="/resume" className="text-[#64FFDA] hover:text-white transition-colors duration-300">
             My Resume
-          </a>
+          </Link>
         </div>
   </div>
 
