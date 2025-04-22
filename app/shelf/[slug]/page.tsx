@@ -1,14 +1,31 @@
 // app/shelf/[slug]/page.tsx
-
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-// Correct type for the params in Next.js 13+ dynamic route
-type tParams = { slug: string };
+// Define PageProps for the params, where `slug` is a string
+interface PageProps {
+  params: {
+    slug: string; // single string for the slug
+  };
+}
 
-export default async function BlogPostPage({ params }: { params: tParams }) {
-  // params is directly available here, no need to await
-  const { slug } = params;
+// This is an async function that gets params from the dynamic route
+export default async function BlogPostPage({ params }: PageProps) {
+  let slug: string;
+
+  // Handle async params with then, catch, and finally
+  await Promise.resolve(params)
+    .then((resolvedParams) => {
+      slug = resolvedParams.slug; // Resolving the slug
+    })
+    .catch((error) => {
+      console.error("Error resolving params:", error);
+      return notFound(); // Return a 404 if there's an issue
+    })
+    .finally(() => {
+      // Any cleanup if necessary
+      console.log("Finished resolving params.");
+    });
 
   // Find the blog post based on the slug
   const post = blogPosts.find((p) => p.slug === slug);
@@ -33,9 +50,10 @@ export default async function BlogPostPage({ params }: { params: tParams }) {
   );
 }
 
-// Static generation for dynamic params
+// Static generation for dynamic params (slug)
 export async function generateStaticParams() {
+  // Return an array of objects with a slug key
   return blogPosts.map((post) => ({
-    slug: post.slug,
+    slug: post.slug, // Ensure slug is passed correctly as a string
   }));
 }
