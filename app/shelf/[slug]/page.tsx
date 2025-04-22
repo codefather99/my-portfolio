@@ -3,9 +3,11 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-// Using async function to fetch dynamic data
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  // Ensure `params` is awaited (as it's an async operation in Next.js)
+// Correct type for the params in Next.js 13+ dynamic route
+type tParams = { slug: string };
+
+export default async function BlogPostPage({ params }: { params: tParams }) {
+  // params is directly available here, no need to await
   const { slug } = params;
 
   // Find the blog post based on the slug
