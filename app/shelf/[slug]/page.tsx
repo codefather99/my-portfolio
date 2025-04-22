@@ -1,14 +1,16 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
-// No need to define Props manually
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+// Must be async (even if you're not awaiting anything inside)
+export default async function BlogPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params; // No need to await
   const post = blogPosts.find((p) => p.slug === slug);
 
-  if (!post) {
-    return notFound();
-  }
+  if (!post) return notFound();
 
   return (
     <div className="min-h-screen py-16 px-4 max-w-3xl mx-auto">
