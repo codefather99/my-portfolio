@@ -1,4 +1,3 @@
-// app/shelf/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blogData";
 
@@ -8,8 +7,9 @@ type Props = {
   };
 };
 
+// Mark the component as async to await params
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = await params;  // Await params
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
@@ -22,21 +22,11 @@ export default async function BlogPostPage({ params }: Props) {
         <h3 className="font-inter text-sm mb-3 text-gray-500 ">{post.date}</h3>
       </div>
       <div>
-      <div className="flex gap-6 lg:mb-6 mb-3">
-        {/* <img
-          src={post.image}
-          alt={post.title}
-          className="w-1/3 h-auto object-cover rounded-lg mb-2"
-        />
-       */}
-      </div>
         <h1 className="lg:text-4xl text-3xl font-bold font-space-grotesk mb-6 text-[#00BFA5]">{post.title}</h1>
         <p className="lg:text-sm text-xs text-neutral-500 mb-2">Series: {post.tag}</p>
-      
         <p className="lg:text-lg text-sm leading-relaxed text-black">
           {post.description}
         </p>
-      
       </div>
     </div>
   );
