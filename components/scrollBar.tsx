@@ -30,7 +30,7 @@ export default function ScrollBar({ activeSection }: ScrollBarProps) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
-          className="lg:fixed relative top-2 left-10  w-20 h-20 object-contain z-[100]
+          className="lg:fixed relative top-1 left-10  w-20 h-20 object-contain z-[100]
           "
         />
       </AnimatePresence>

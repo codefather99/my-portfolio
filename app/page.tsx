@@ -181,15 +181,15 @@ export default function Home() {
             height={70}
             className="absolute right-55 bottom-70 opacity-100 "
           />
-          <div className="max-w-screen-xl mx-auto">
+         
             <Image
               src="/profile-picture.png"
               alt="Hero"
               width={700}
               height={700}
-              className=" mx-auto lg:left-[-70] lg:w-[100vw]   2xl:bottom-50  relative md:absolute md:left-[-320px] lg:bottom-30 md-bottom-50 md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
+              className=" mx-auto lg:left-[-70] lg:w-[100vw] 2xl:right-50  2xl:bottom-50  relative md:absolute md:left-[-320px] lg:bottom-30  md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
             />
-        </div>
+        
           </div>
         
         </section>
