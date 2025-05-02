@@ -183,7 +183,7 @@ export default function Home() {
           />
           <div className="max-w-screen-xl mx-auto">
             <Image
-              src="/profile-picture.webp"
+              src="/profile-picture.png"
               alt="Hero"
               width={700}
               height={700}
