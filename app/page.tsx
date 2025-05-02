@@ -187,7 +187,7 @@ export default function Home() {
               alt="Hero"
               width={700}
               height={700}
-              className=" mx-auto lg:left-[-70] lg:w-[100vw]  2xl:right-10 2xl:bottom-50  relative md:absolute md:left-[-320px] lg:bottom-30 md-bottom-50 md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
+              className=" mx-auto lg:left-[-70] lg:w-[100vw]   2xl:bottom-50  relative md:absolute md:left-[-320px] lg:bottom-30 md-bottom-50 md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
             />
         </div>
           </div>
