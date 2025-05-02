@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <section id="footer" className="w-full lg:h-screen h-auto lg:my-0 my-0 py-15 flex flex-col items-center justify-center bg-[#0A192F] px-6 text-center lg:snap-start">
-    <div className="w-4/5 max-w-4xl flex flex-row justify-evenly  gap-12">
+    <div className="w-4/5 max-w-4xl flex flex-row justify-evenly   gap-12">
       {/* Social Icons (Replace with actual icons) */}
       <div className="flex flex-col lg:gap-6 gap-3 mt-4 text-left">
         <h2 className="text-md text-gray-400">SAY HELLO</h2>

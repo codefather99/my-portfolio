@@ -24,7 +24,7 @@ export default async function ShelfPage() {
     <div className="min-h-screen py-16 px-4 max-w-4xl mx-auto">
       <h1 className="text-3xl font-bold mb-10 text-[#0A192F] text-center">My Shelf</h1>
       
-      <div className="flex flex-col  divide-y divide-neutral-300 dark:divide-neutral-700">
+      <div className="flex flex-col flex-grow overflow-x-hidden divide-y divide-neutral-300 dark:divide-neutral-700">
         {posts.map((post) => (
           <BlogPostItem
             key={post._id}

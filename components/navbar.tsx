@@ -60,7 +60,7 @@ const menuItems = useMemo(() => [
     <nav
       className={`${
         isHome ? "fixed" : "relative"
-      } top-0 left-0 w-full p-10 flex justify-between items-center transition-all duration-300 z-500 bg-transparent ${
+      } top-0 left-0 w-full lg:p-10 p-5 flex justify-between items-center transition-all duration-300 z-500 bg-transparent ${
         scrolled ? "bg-transparent" : "bg-transparent"
       }`}
     >

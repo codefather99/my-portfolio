@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import SvgPattern from "@/components/svgPattern";
+// import SvgPattern from "@/components/svgPattern";
 import ScrollBar from "@/components/scrollBar";
 // import { usePathname} from "next/navigation";
 
@@ -115,35 +115,34 @@ export default function Home() {
     <div className="relative w-full h-screen bg-[#F4FDFC]">
      
       <ScrollBar  activeSection={activeSection} />
-      
-
      
       {/* Scrollable Wrapper */}
-      <main className=" h-screen overflow-y-scroll leading-loose scroll-quick scroll-smooth lg:snap-y lg:snap-mandatory scrollbar-hide overscroll-none relative z-10">
+      <main className=" h-screen overflow-x-hidden overflow-y-scroll leading-loose scroll-quick scroll-smooth lg:snap-y lg:snap-mandatory scrollbar-hide overscroll-none relative z-10">
         {/* Landing Page */}
         
-        <section id="/" className="w-full lg:h-screen flex md:flex-row flex-col relative lg:snap-start">
+        <section id="/" className="w-full lg:h-screen flex md:flex-row flex-col relative lg:snap-start ">
+        
           <div className="lg:w-[67%] w-full lg:h-full  bg-[#0A192F] pb-12 pt-20 flex items-center justify-center">
-          <Image
+          {/* <Image
                   src="/svg/shape40.png"
                   alt="pattern"
                   width={40}
                   height={80}
                   className="absolute left-190 bottom-30  w-auto h-auto opacity-80"
-                />
+                /> */}
 
-                <Image
+                {/* <Image
                   src="/svg/svg5000.png"
                   alt="pattern2"
                   width={50}
                   height={50}
                   className="absolute left-170 bottom-70  w-auto h-auto opacity-80"
-                />
+                /> */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-3/4 flex flex-col text-left md:mt-10"
+              className="w-3/4 flex flex-col text-left md:mt-10 max-w-screen-xl mx-auto"
             >
               <h1 className="lg:text-6xl text-4xl font-space-grotesk font-bold text-[#64FFDA]">
                 Fullstack <br /> Developer<span className="text-[#00BFA5]">.</span>
@@ -152,7 +151,7 @@ export default function Home() {
               <h2 className="lg:text-2xl text-xl font-inter text-gray-200 mt-2">
                 I build websites for amazing people.
               </h2>
-              <div className="flex md:w-3/4 w-full h-auto text-xs font-inter space-x-4 mb-10 mt-20 text-[#64FFDA]">
+              <div className="flex md:w-3/4 w-full h-auto text-xs 2xl:text-lg font-inter space-x-4 mb-10 mt-20 text-[#64FFDA]">
                 <p className="pr-3">
                 Well-versed in seamless UI engineering, design systems & progressive enhancement.
                 </p>
@@ -165,10 +164,10 @@ export default function Home() {
             </motion.div>
           </div>
           <div className="hidden lg:block lg:w-1 lg:opacity-100 opacity-0 w-full h-full bg-[#64FFDA]"></div>
-          <div className="md:w-[33%] w-full lg:h-full h-[3/4] bg-[#64FFDA] relative pb-10">
-          <SvgPattern className="absolute inset-0 w-full h-full z-[1] opacity-50 pointer-events-none" />
+          <div className="md:w-[33%]  w-full lg:h-full h-[3/4] bg-[#64FFDA] relative pb-10 ">
+          {/* <SvgPattern className="absolute inset-0 w-full h-full z-[1] opacity-50 pointer-events-none" /> */}
           <Image
-            src="/svg/shape20.png"
+            src="/svg/shape20.webp"
             alt=""
             width={70}
             height={70}
@@ -176,33 +175,34 @@ export default function Home() {
           />
 
           <Image
-            src="/svg/shape20.png"
+            src="/svg/shape20.webp"
             alt=""
             width={70}
             height={70}
             className="absolute right-55 bottom-70 opacity-100 "
           />
+          <div className="max-w-screen-xl mx-auto">
             <Image
-              src="/profile-picture.png"
+              src="/profile-picture.webp"
               alt="Hero"
               width={700}
               height={700}
-              className=" mx-auto left-[-70] w-[100vw] relative md:absolute md:left-[-320px] lg:bottom-30 md-bottom-50 md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
+              className=" mx-auto lg:left-[-70] lg:w-[100vw]  2xl:right-10 2xl:bottom-50  relative md:absolute md:left-[-320px] lg:bottom-30 md-bottom-50 md:translate-y-0 md:min-w-[600px] md:w-auto h-auto"
             />
-        
+        </div>
           </div>
         
         </section>
 
         {/* About Section */}
-        <section id="about" className="w-full lg:h-screen  flex lg:flex-row lg:space-evenly flex-col lg:items-center lg:justify-center bg-[#F4FDFC] lg:snap-start">
+        <section id="about" className="w-full lg:h-screen h-auto  flex lg:flex-row lg:space-evenly flex-col lg:items-center lg:justify-center bg-[#F4FDFC] lg:snap-start">
           
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="lg:w-3/4 w-full  lg:text-center"
+            className="lg:w-3/4 w-full  lg:text-center max-w-screen-xl mx-auto"
           >
             <div className="relative lg:w-full  flex-col justify-center gap-6 py-15 my-5 lg:my-0 px-15 lg:flex-row lg:gap-0 lg:px-0 lg:py-0 flex  ">
             <Image
@@ -214,7 +214,7 @@ export default function Home() {
           />
             
             <Image
-            src="/svg/shape20.png"
+            src="/svg/shape20.webp"
             alt=""
             width={70}
             height={70}
@@ -230,7 +230,7 @@ export default function Home() {
           />
             
             <Image
-            src="/svg/shape20.png"
+            src="/svg/shape20.webp"
             alt=""
             width={70}
             height={70}
@@ -263,7 +263,7 @@ export default function Home() {
 
         {/* Work Experience */}
         <section id="work" className="w-full lg:h-screen h-auto flex  bg-[#0A192F] lg:snap-start">
-          <div className="flex h-full lg:flex-row flex-col ">
+          <div className="flex h-full lg:flex-row flex-col max-w-screen-xl mx-auto ">
             <div className="lg:max-w-[50%] flex flex-col  justify-center pl-12 pr-5 lg:pr-0 h-full lg:pl-[7.5rem] lg:py-20 py-5 ">
               <h1 className="lg:text-5xl text-4xl font-bold font-space-grotesk text-[#64FFDA]">Over the <br /> Years,</h1>
               <p className="lg:text-sm text-xs flex-wrap pr-6 lg:pr-0 mt-4 font-inter text-white max-w-full break-words z-[5000]">
@@ -279,7 +279,7 @@ export default function Home() {
             </div>
             <div className="lg:w-[60%]">
             <Image
-              src="/images/work1.png"
+              src="/images/work1.webp"
               alt="Hero"
               width={500}
               height={500}
@@ -291,7 +291,7 @@ export default function Home() {
 
         {/* Portfolio/Blog */}
         <section id="portfolio" className="w-full lg:h-screen h-auto mt-10 flex justify-center items-center  bg-[#F4FDFC] lg:snap-start">
-  <div className="lg:max-w-6xl lg:h-[80%] lg:w-full flex lg:flex-row flex-col lg:justify-between items-center  px-8 bg-white rounded-md">
+  <div className="lg:max-w-6xl lg:h-[80%] lg:w-full flex lg:flex-row flex-col lg:justify-between items-center  px-8 bg-white rounded-md ">
     {/* Left Section */}
     <div className="lg:w-1/2 lg:pl-10 pr-20 lg:pr-0 py-10 lg:py-0">
       <h2 className="lg:text-5xl text-3xl font-bold font-space-grotesk text-[#0A192F]">I build & <br /> design stuff</h2>
@@ -300,10 +300,10 @@ export default function Home() {
       </p>
       <Link
         href="/work"
-        className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3 py-2 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
+        className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3  border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
       >
         <span className="absolute inset-0 w-0 bg-[#0A192F] transition-all duration-300 ease-in-out group-hover:w-full group-active:w-full"></span>
-        <span className="relative z-10 group-hover:text-white group-active:text-white">See My Work →</span>
+        <span className="relative z-10 group-hover:text-white text-sm lg:text-xl group-active:text-white">See My Work →</span>
       </Link>
 
     </div>
@@ -315,14 +315,14 @@ export default function Home() {
     <div className="lg:w-1/2  pr-20 lg:pr-0 lg:pl-20 pb-10 lg:pb-0">
       <h2 className="lg:text-5xl text-3xl font-bold font-space-grotesk text-[#0A192F]">I write, <br /> sometimes</h2>
       <p className="mt-2 text-[#0A192F] font-inter lg:text-xl text-sm">
-        About design,<br /> design & dev,<br /> learning and life.
+        About design,<br /> fullstack dev,<br /> learning and life.
       </p>
       <Link
         href="/shelf"
-        className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3 py-2 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
+        className="relative lg:mt-10 mt-3 inline-block lg:px-15 px-5 lg:py-3  border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
       >
         <span className="absolute inset-0 w-0 bg-[#0A192F] transition-all duration-300 ease-in-out group-hover:w-full group-active:w-full"></span>
-        <span className="relative z-10 group-hover:text-white group-active:text-white">Read my blog →</span>
+        <span className="relative z-10 group-hover:text-white text-sm lg:text-xl group-active:text-white">See my shelf →</span>
       </Link>
 
     </div>
@@ -380,10 +380,10 @@ export default function Home() {
     {/* Submit Button */}
     <button
       type="submit"
-      className="relative mx-auto mt-4 inline-block px-25 py-4 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
+      className="relative mx-auto mt-4 inline-block px-25 lg:py-4 border-1 border-[#0A192F] text-[#0A192F] overflow-hidden transition-all duration-300 ease-in-out group"
     >
       <span className="absolute inset-0 w-0 bg-[#0A192F] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-      <span className="relative z-10 group-hover:text-white">Hit it →</span>
+      <span className="relative z-10 text-sm lg:text-xl group-hover:text-white">Shoot →</span>
     </button>
   </form>
 </section>
