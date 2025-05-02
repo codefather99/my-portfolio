@@ -9,7 +9,7 @@ const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "sw
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Emefo",
+  title: "Emefo Henry: Fullstack Developer",
   description: "Emefo Henry's Portfolio",
   icons: {
     icon: "/favicon.png",
