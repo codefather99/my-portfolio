@@ -32,7 +32,13 @@
   .font-space-grotesk {
     font-family: var(--font-space-grotesk) !important;
   }
-  
+
+  .truncate-multiline {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
 
   @layer utilities {
     .scroll-quick {

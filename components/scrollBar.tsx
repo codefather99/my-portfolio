@@ -9,7 +9,7 @@ const sections = ["hero", "about", "work", "portfolio", "contact", "footer"];
 const sectionImages: Record<number, string> = {
   0: "/images/emefo-logo4.png",
   1: "/images/emefo-logo1.png",
-  2: "/favicon.png",
+  2: "/images/emefo-logo7.png",
   3: "/images/emefo-logo1.png",
   4: "/images/emefo-logo1.png",
   5: "/images/emefo-logo4.png",

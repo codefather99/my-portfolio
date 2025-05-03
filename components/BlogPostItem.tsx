@@ -46,7 +46,7 @@ export default function BlogPostItem({
         <div className="flex-1 flex-grow pb-6 px-15">
           <span className="text-xs font-semibold font-inter text-gray-500">{tag}:</span>
           <h2 className="lg:text-xl text-lg font-bold mb-1 text-[#00BFA5]">{title}</h2>
-          <div className="text-sm sm:text-base font-inter text-gray-600 line-clamp-2">
+          <div className="text-sm sm:text-base font-inter text-gray-600 truncate-multiline line-clamp-2">
             <PortableText value={body} />
           </div>
           <h3 className="text-xs text-gray-400">{date}</h3>
